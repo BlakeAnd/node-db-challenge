@@ -35,6 +35,20 @@ server.post("/api/actions/:id", (req, res) => {
     res.status(500).json({error: error.message})
   })
 })
+server.get("/api/projects/:id", (req, res) => {
+  const id = req.params.id;
+
+  db("projects")
+  .leftJoin("actions", "projects.id", "actions.project_id")
+  .where({project_id: id}, id)
+  .select()
+  .then(project => {
+    res.status(200).json(project);
+  })
+  .catch(error => {
+    res.status(500).json({error: error.message})
+  })
+})
 
 
 module.exports = server;
