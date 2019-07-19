@@ -33,9 +33,20 @@ This will be akin to the Web API that you built in the last sprint, only this ti
 Demonstrate your understanding of this week's concepts by answering the following free-form questions. Edit this document to include your answers after each question. Make sure to leave a blank line above and below your answer so it is clear and easy to read by your project manager.
 
 1. Explain the difference between `Relational Databases` and `SQL`.
+
+a relational database is a type of database and sql is a language used for making queries to relational databases.
+
 1. Why do tables need a `primary key`?
+
+primary keys make sure that every table contains at least one column of unique information that we can use to access it. 
+
 1. What is the name given to a table column that references the primary key on another table.
+
+a foreign key.
+
 1. What do we need in order to have a _many to many_ relationship between two tables.
+
+a third intermediate table that contains foreign keys that point to the other two tables. 
 
 ## Project Set Up
 
@@ -79,7 +90,7 @@ Feel free to name the tables and fields anything you want. **Add relationships**
   - [ ] POST for adding projects.
   - [ ] POST for adding actions.
   - [ ] GET for retrieving a `project` by its `id` that returns an object with the following structure:
-
+  
     ```js
     {
       id: 1,
