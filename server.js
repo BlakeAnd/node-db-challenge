@@ -49,6 +49,18 @@ server.get("/api/projects/:id", (req, res) => {
     res.status(500).json({error: error.message})
   })
 })
+server.delete("/api/projects/:id", (req, res) => {
+  const id = req.params.id;
+  db("projects")
+  .where({id})
+  .del()
+  .then(project => {
+    res.status(200).json(project);
+  })
+  .catch(error => {
+    res.status(500).json({error: error.message})
+  })
+})
 
 
 module.exports = server;
